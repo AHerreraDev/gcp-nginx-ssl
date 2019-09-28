@@ -1,8 +1,7 @@
 const express = require('express');
 const app = express();
 
-app.route('/', (req, res) => {
-  console.log('Hit home');
+app.get('/', (req, res) => {
   res
   .status(200)
   .send('<h1> Node App </h1>')
