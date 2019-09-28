@@ -3,9 +3,14 @@ const app = express();
 
 app.route('/', (req, res) => {
   console.log('Hit home');
-  res.send('<h1> Node App </h1>')
+  res
+  .status(200)
+  .send('<h1> Node App </h1>')
+  .end();
 })
 
-app.listen(3000, () => {
-  console.log('Server running on port 3000')
-});
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}`);
+  console.log('Press Ctrl+C to quit.')
+})
